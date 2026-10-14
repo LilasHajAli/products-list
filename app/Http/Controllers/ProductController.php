@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index(Request $request)
 {
     $search = $request->search;
-    $products = Product::where('name', 'like', "%$search%")->get();
+    $products = Product::where('name', 'like', "%$search%")->paginate(5)->withQueryString();
     return view('products.index', compact('products'));
 }
 

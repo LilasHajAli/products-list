@@ -47,9 +47,12 @@
 
             </tbody>
         </table>
-@if (!request('search'))
+        @if (!request('search'))
     <a href="{{ url('/products/create') }}">Create Product</a>
 @endif
+<br><br>
+        {{ $products->links() }}
+
    </body>
 </html>
 
